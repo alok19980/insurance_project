@@ -34,7 +34,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">
+          <a class="nav-link <?php echo (CURRENT_PAGE == "index.php") ? 'active' : ''; ?>" href="index.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
@@ -42,19 +42,43 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#">
+          <a class="nav-link <?php echo (CURRENT_PAGE == "gi.php") ? 'active' : ''; ?>" href="gi.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">GI ( General Insurance )</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#">
+          <a class="nav-link <?php echo (CURRENT_PAGE == "li.php") ? 'active' : ''; ?>" href="li.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Billing</span>
+            <span class="nav-link-text ms-1">LI ( Life Insurance )</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo (CURRENT_PAGE == "mc.php") ? 'active' : ''; ?>" href="mc.php">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Mediclaim</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo (CURRENT_PAGE == "si.php" ) ? 'active' : ''; ?>" href="si.php">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">SI ( Simple Insurance )</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php echo (CURRENT_PAGE == "policyCopy.php") ? 'active' : ''; ?>" href="policyCopy.php">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-folder-17 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Policy Copy</span>
           </a>
         </li>
       </ul>
