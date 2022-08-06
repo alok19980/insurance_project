@@ -11,82 +11,70 @@ $numCustomers = $db->getValue ("customers", "count(*)");
 
 include_once('includes/header.php');
 ?>
-<div id="page-wrapper">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-user fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge"><?php echo $numCustomers; ?></div>
-                            <div>Customers</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="customers.php">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
-                            <div>New Tasks!</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-        
-        </div>
-        <div class="col-lg-3 col-md-6">
+
+<!-- new ui content starts -->
+
+<main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
+          </ol>
+          <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          
+          <ul class="navbar-nav  justify-content-end">
             
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                </div>
+              </a>
+            </li>
+            
+            
+          </ul>
         </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      
+      <div class="row mt-4" style="color:white; text-align:center;">
+        
+        <div class="col-lg-5">
+            <b>
+          There is nothing left behind if you are here now.
+</b>
+        </div>
+      </div>
+    
+     
     </div>
-    <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-8">
-
-
-            <!-- /.panel -->
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
-
-            <!-- /.panel .chat-panel -->
-        </div>
-        <!-- /.col-lg-4 -->
-    </div>
-    <!-- /.row -->
-</div>
-<!-- /#page-wrapper -->
+  </main>
+ 
+  <!--   Core JS Files   -->
+  <script src="theme/assets/js/core/popper.min.js"></script>
+  <script src="theme/assets/js/core/bootstrap.min.js"></script>
+  <script src="theme/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="theme/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="theme/assets/js/plugins/chartjs.min.js"></script>
+  
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
 
 <?php include_once('includes/footer.php'); ?>

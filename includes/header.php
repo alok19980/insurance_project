@@ -20,75 +20,63 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="theme/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
+<?php if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true) { ?>
+<body class="g-sidenav-show   bg-gray-100">
+<div class="min-height-300 bg-primary position-absolute w-100"></div>
+  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href="index.php" target="_blank">
+        <span class="ms-1 font-weight-bold">Ronak Insurance </span>
+      </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.php">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Tables</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Billing</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="sidenav-footer mx-3 ">
+      <div class="card card-plain shadow-none" id="sidenavCard">
+        <img class="w-50 mx-auto" src="theme/assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
+        <div class="card-body text-center p-3 w-100 pt-0">
+          <div class="docs-info">
+            <h6 class="mb-0">Version : 1.0</h6>
+            <p class="text-xs font-weight-bold mb-0">Ronak Insurance Syatems</p>
+          </div>
+        </div>
+      </div>
+      
+      <a class="btn btn-primary btn-sm mb-0 w-100" href="logout.php" type="button">Logout</a>
+    </div>
+  </aside>
 
-<body class="">
-
-<!-- Navigation -->
-            <?php if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true) { ?>
-                <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="">Administrator</a>
-                    </div>
-                    <!-- /.navbar-header -->
-
-                    <ul class="nav navbar-top-links navbar-right">
-                        <!-- /.dropdown -->
-
-                        <!-- /.dropdown -->
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                                </li>
-                            </ul>
-                            <!-- /.dropdown-user -->
-                        </li>
-                        <!-- /.dropdown -->
-                    </ul>
-                    <!-- /.navbar-top-links -->
-
-                    <div class="navbar-default sidebar" role="navigation">
-                        <div class="sidebar-nav navbar-collapse">
-                            <ul class="nav" id="side-menu">
-                                <li>
-                                    <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                                </li>
-
-                                <li <?php echo (CURRENT_PAGE == "customers.php" || CURRENT_PAGE == "add_customer.php") ? 'class="active"' : ''; ?>>
-                                    <a href="#"><i class="fa fa-user-circle fa-fw"></i> Customers<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-second-level">
-                                        <li>
-                                            <a href="customers.php"><i class="fa fa-list fa-fw"></i>List all</a>
-                                        </li>
-                                    <li>
-                                        <a href="add_customer.php"><i class="fa fa-plus fa-fw"></i>Add New</a>
-                                    </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="admin_users.php"><i class="fa fa-users fa-fw"></i> Users</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /.sidebar-collapse -->
-                    </div>
-                    <!-- /.navbar-static-side -->
-                </nav>
-            <?php } else { ?>
+<?php } else { ?>
 <!-- Start od Login header -->
+<body class="">
 <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
       <div class="col-12">
