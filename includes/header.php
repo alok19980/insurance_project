@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="theme/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="theme/assets/img/favicon.png">
+  <title>
+    Ronak Insurance Management Systems
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="theme/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="theme/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="theme/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="theme/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+</head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+<body class="">
 
-        <title>Administrator</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link  rel="stylesheet" href="assets/css/bootstrap.min.css"/>
-
-        <!-- MetisMenu CSS -->
-        <link href="assets/js/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="assets/css/sb-admin-2.css" rel="stylesheet">
-        <!-- Custom Fonts -->
-        <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-
-    </head>
-
-    <body>
-
-        <div id="wrapper">
-
-            <!-- Navigation -->
-            <?php if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true): ?>
+<!-- Navigation -->
+            <?php if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true) { ?>
                 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -100,5 +87,26 @@
                     </div>
                     <!-- /.navbar-static-side -->
                 </nav>
-            <?php endif;?>
-            <!-- The End of the Header -->
+            <?php } else { ?>
+<!-- Start od Login header -->
+<div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid">
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="index.php">
+              Ronak Insurance Management Systems
+            </a>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- end of Login header -->
+
+<?php } ?>

@@ -1,23 +1,21 @@
-</div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-
-
-    <!-- Bootstrap Core JavaScript -->
-
-        <script src="assets/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="assets/js/metisMenu/metisMenu.min.js"></script>
-
-
-
-
-    <!-- Custom Theme JavaScript -->
-    <script src="assets/js/sb-admin-2.js"></script>
-    <script src="assets/js/jquery.validate.min.js"></script>
-
+<!--   Core JS Files   -->
+<script src="theme/assets/js/core/popper.min.js"></script>
+  <script src="theme/assets/js/core/bootstrap.min.js"></script>
+  <script src="theme/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="theme/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="theme/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
 </html>

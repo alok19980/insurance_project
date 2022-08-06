@@ -57,26 +57,29 @@ if (isset($_COOKIE['series_id']) && isset($_COOKIE['remember_token']))
 }
 
 include BASE_PATH.'/includes/header.php';
+
 ?>
-<div id="page-" class="col-md-4 col-md-offset-4">
-	<form class="form loginform" method="POST" action="authenticate.php">
-		<div class="login-panel panel panel-default">
-			<div class="panel-heading">Please Sign in</div>
-			<div class="panel-body">
-				<div class="form-group">
-					<label class="control-label">username</label>
-					<input type="text" name="username" class="form-control" required="required">
-				</div>
-				<div class="form-group">
-					<label class="control-label">password</label>
-					<input type="password" name="passwd" class="form-control" required="required">
-				</div>
-				<div class="checkbox">
-					<label>
-						<input name="remember" type="checkbox" value="1">Remember Me
-					</label>
-				</div>
-				<?php if (isset($_SESSION['login_failure'])): ?>
+<!-- New Login code here -->
+<main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+              <div class="card card-plain">
+                <div class="card-header pb-0 text-start">
+                  <h4 class="font-weight-bolder">Sign In</h4>
+                  <p class="mb-0">Enter your email and password to sign in</p>
+                </div>
+                <div class="card-body">
+                  <form role="form" method="POST" action="authenticate.php">
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-lg" placeholder="Email" aria-label="Email" name="username" required="required">
+                    </div>
+                    <div class="mb-3">
+                      <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="passwd" required="required">
+                    </div>
+                    <?php if (isset($_SESSION['login_failure'])): ?>
 				<div class="alert alert-danger alert-dismissable fade in">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					<?php
@@ -85,9 +88,31 @@ include BASE_PATH.'/includes/header.php';
 					?>
 				</div>
 				<?php endif; ?>
-				<button type="submit" class="btn btn-success loginField">Login</button>
-			</div>
-		</div>
-	</form>
-</div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
+                    </div>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+          background-size: cover;">
+                <span class="mask bg-gradient-primary opacity-6"></span>
+                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Attention is the new currency"</h4>
+                <p class="text-white position-relative">The more effortless the writing looks, the more effort the writer actually put into the process.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+
+
+<!-- New Login code ends here -->
+
 <?php include BASE_PATH.'/includes/footer.php'; ?>
